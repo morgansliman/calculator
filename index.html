@@ -112,13 +112,12 @@
 
 $(document).ready(function(){
 
-$(".clear").on("click" , function(){
-
-    $('#firstNumber').empty();
-     $("#secondNumber").empty();
-     $('#operator-blank').empty();
-     $('#result').empty(); 
-});
+    $(".clear").on("click" , function(){
+         $('#firstNumber').empty();
+         $("#secondNumber").empty();
+         $('#operator-blank').empty();
+         $('#result').empty(); 
+    });
 
     $('.number').on('click', function() {
         if ($('#operator-blank').html() == '') {
@@ -172,11 +171,9 @@ $(".clear").on("click" , function(){
                     console.log(x);
                     $('#result').html(x);
                     break;
-
             }
         }
-    });
-    
+    }); 
 });
 
 </script>
