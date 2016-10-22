@@ -120,20 +120,19 @@ $(document).ready(function(){
     });
 
     $('.number').on('click', function() {
-        if ($('#operator-blank').html() == '') {
+        if ($('#operator-blank').html() == '' && $('#result').text() == '') {
             $('#firstNumber').text($('#firstNumber').text() + $(this).data('value'));
         }  
     });
 
     $('.operator').on('click', function () {
-        if ($('#firstNumber').text() != '') {
-            $('#operator-blank').html(
-                "<span class='label label-default blank' data-value='" + $(this).data('value') + "'>" + $(this).data('value') + "</span>");
+        if ($('#firstNumber').text() != '' && $('#result').text() == '') {
+            $('#operator-blank').html("<span class='label label-default blank' data-value='" + $(this).data('value') + "'>" + $(this).data('value') + "</span>");
         }
     });
 
     $('.number').on('click', function() {
-        if ($('#firstNumber').text() != '' && $('#operator-blank').html() != '') {
+        if ($('#firstNumber').text() != '' && $('#operator-blank').html() != '' && $('#result').text() == '') {
             $('#secondNumber').text($('#secondNumber').text() + $(this).data('value'));
         }
     });
@@ -141,34 +140,35 @@ $(document).ready(function(){
     $('.equal').on('click', function() {
         if ($('#secondNumber').text() != 0) {
             switch ($('.blank').data('value')) {
-                case "plus" :
+
+                case 'plus':
+
                     var x = parseInt($('#firstNumber').text()) + parseInt($('#secondNumber').text());
-                    console.log(x);
                     $('#result').html(x);
                     break;
+
                 case "minus" :
                     var x = parseInt($('#firstNumber').text()) - parseInt($('#secondNumber').text());
-                    console.log(x);
                     $('#result').html(x);
                     break;
+
                 case "times" :
                     var x = parseInt($('#firstNumber').text()) * parseInt($('#secondNumber').text());
-                    console.log(x);
                     $('#result').html(x);
                     break;
+
                 case "divide" :
                     var x = parseInt($('#firstNumber').text()) / parseInt($('#secondNumber').text());
-                    console.log(x);
                     $('#result').html(x);
                     break;
+
                 case "plus" :
                     var x = parseInt($('#firstNumber').text()) + parseInt($('#secondNumber').text());
-                    console.log(x);
                     $('#result').html(x);
                     break;
+
                 case "power" :
                     var x = Math.pow(parseInt($('#firstNumber').text()) , parseInt($('#secondNumber').text()));
-                    console.log(x);
                     $('#result').html(x);
                     break;
             }
