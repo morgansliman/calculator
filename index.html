@@ -119,6 +119,14 @@ $(document).ready(function(){
          $('#result').empty(); 
     });
 
+    $('.clear').on('click', function() {
+        $('#firstNumber').empty();
+        $('#operator-blank').empty();
+        $('#secondNumber').empty();
+        $('#result').empty();
+    });
+
+
     $('.number').on('click', function() {
         if ($('#operator-blank').html() == '' && $('#result').text() == '') {
             $('#firstNumber').text($('#firstNumber').text() + $(this).data('value'));
