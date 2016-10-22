@@ -149,34 +149,28 @@ $(document).ready(function(){
         if ($('#secondNumber').text() != 0) {
             switch ($('.blank').data('value')) {
 
-                case 'plus':
-
-                    var x = parseInt($('#firstNumber').text()) + parseInt($('#secondNumber').text());
-                    $('#result').html(x);
-                    break;
-
-                case "minus" :
-                    var x = parseInt($('#firstNumber').text()) - parseInt($('#secondNumber').text());
-                    $('#result').html(x);
-                    break;
-
-                case "times" :
-                    var x = parseInt($('#firstNumber').text()) * parseInt($('#secondNumber').text());
-                    $('#result').html(x);
-                    break;
-
-                case "divide" :
-                    var x = parseInt($('#firstNumber').text()) / parseInt($('#secondNumber').text());
-                    $('#result').html(x);
-                    break;
-
                 case "plus" :
                     var x = parseInt($('#firstNumber').text()) + parseInt($('#secondNumber').text());
                     $('#result').html(x);
                     break;
 
-                case "power" :
-                    var x = Math.pow(parseInt($('#firstNumber').text()) , parseInt($('#secondNumber').text()));
+                case 'minus':
+                    var x = parseInt($('#firstNumber').text()) - parseInt($('#secondNumber').text());
+                    $('#result').html(x);
+                    break;
+
+                case 'times':
+                    var x = parseInt($('#firstNumber').text()) * parseInt($('#secondNumber').text());
+                    $('#result').html(x);
+                    break;
+
+                case 'divide':
+                    var x = parseInt($('#firstNumber').text()) / parseInt($('#secondNumber').text());
+                    $('#result').html(x);
+                    break;
+
+                case 'power':
+                    var x = Math.pow(parseInt($('#firstNumber').text()), parseInt($('#secondNumber').text()));
                     $('#result').html(x);
                     break;
             }
